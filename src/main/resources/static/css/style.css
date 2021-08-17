@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+}
+.list{
+    size: 25px;
+    color: orange;
+}
+table{
+    border: 1px solid orange;
+    color: orange;
+}
+td,th{
+    color: orange;
+    margin-top: 2px;
+}
+.table{
+    margin-left: 42%;
+}
+.employersTable{
+    margin-left: 36%;
+}
+a{
+    color: orange;
+}
+a:hover{
+    color: red;
+    font-size: 20px;
+}
