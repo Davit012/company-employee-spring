@@ -16,7 +16,7 @@
   <span style="color: orange">Company where you are working</span>
   <select class = "input" name="companyId">
     <option th:each="company:${companies}" th:text="${company.name}" th:value="${company.id}"></option>
-  </select>
+  </select><br>
   <input type="submit"  value="add" class = "companySubmit">
 </form>
 </body>
