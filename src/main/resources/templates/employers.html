@@ -1,37 +1,41 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.thymeleaf.org ">
 <head>
     <meta charset="UTF-8">
-    <title>employeers</title>
+    <title>employees</title>
     <link rel = "stylesheet" type="text/css" href = "css/style.css">
 </head>
 <body>
-<div class="employersTable">
-    <span style="color:orange;">Emmployees</span> | <a href="/addEmployee" style="border: orange; color: orange"> Add Employee </a>
+<a href="/">home</a><br>
+<a href="/addEmployee" >add employee</a>
+<table border="1">
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>surname</th>
+        <th>email</th>
+        <th>phoneNumber</th>
+        <th>salary</th>
+        <th>position</th>
+        <th>company name</th>
+        <th>delete</th>
 
-    <table border="1">
+    </tr>
+    <tr th:each="employee: ${employees}">
+        <td th:text="${employee.id}"></td>
+        <td th:text="${employee.name}"></td>
+        <td th:text="${employee.surname}"></td>
+        <td th:text="${employee.email}"></td>
+        <td th:text="${employee.phoneNumber}"></td>
+        <td th:text="${employee.salary}"></td>
+        <td th:text="${employee.position}"></td>
+        <td th:text="${employee.companyId}"></td>
+        <td><a th:href="@{/deleteEmployee/{id} ( id=${employee.id})}" href="#">delete</a></td>
 
-        <tr>
-            <th>id</th>
-            <th>name</th>
-            <th>surname</th>
-            <th>email</th>
-            <th>Phone Number</th>
-            <th>salary</th>
-            <th>position</th>
-            <th>company</th>
-        </tr>
-        <tr th:each="employee:${employers}">
-            <td th:text="${employee.id}"></td>
-            <td th:text="${employee.name}"></td>
-            <td th:text="${employee.surname}"></td>
-            <td th:text="${employee.email}"></td>
-            <td th:text="${employee.phoneNumber}"></td>
-            <td th:text="${employee.salary}"></td>
-            <td th:text="${employee.position}"></td>
-            <td th:text="${employee.companyId}"></td>
-        </tr>
-    </table>
-</div>
+
+    </tr>
+</table>
+
 </body>
 </html>
